@@ -1,4 +1,5 @@
-import Button from "../components/Button";
+import React from 'react';
+import Button from "../components/Button/Button";
 
 export default {
     title: "Components/Button",
@@ -15,8 +16,10 @@ const handleTestClick = () => {
 export const Red = Template.bind({});
 Red.args = {
     backgroundColor: "red",
+    border: '10px solid red',
+    padding: '6px 160px',
     label: "Press me",
-    size: "md",
+    size: "medium",
     handleClick: () => {
         handleTestClick();
     },
@@ -26,7 +29,7 @@ export const Blue = Template.bind({});
 Blue.args = {
     backgroundColor: "blue",
     label: "Press me",
-    size: "md",
+    size: "medium",
     handleClick: () => {
         handleTestClick();
     },

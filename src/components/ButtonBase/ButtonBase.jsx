@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const ButtonBase = () => {
+const ButtonBase = ({ style, ...rest }) => {
     const buttonBaseStyle = {
         minWidth: "64px",
         display: "inline-flex",
@@ -22,9 +22,10 @@ const ButtonBase = () => {
         mozAppearance: "none", // Reset
         webkitAppearance: "none", // Reset
         label: "",
+        ...style
     };
 
-    return <button style={buttonBaseStyle}></button>;
+    return <button style={buttonBaseStyle} { ...rest }></button>;
 };
 
 ButtonBase.propTypes = {

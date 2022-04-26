@@ -10,12 +10,12 @@ const Button = (props) => {
     const style = {
         backgroundColor,
         padding: `${scale * 0.5}rem ${scale * 1}rem`,
-        border: "20px solid red",
+        border: "2px solid red",
     };
 
     return (
-        <ButtonBase onClick={handleClick} border={style.border}>
-            {/* {label} */}
+        <ButtonBase onClick={handleClick} style={style}>
+            {label}
         </ButtonBase>
     );
 };

@@ -1,44 +1,50 @@
-import Button from "../components/Button/Button"
+import Button from "../components/Button/Button";
 
 export default {
-  title: "Components/Button/Button",
-  component: Button,
-  argTypes: { handleClick: { action: "handleClick" } },
-}
+    title: "Components/Button/Button",
+    component: Button,
+    argTypes: {
+        handleClick: { action: "handleClick" },
+        size: {
+            options: ["small", "medium", "large"],
+            control: { type: "radio" },
+        },
+    },
+};
 
-const Template = args => <Button {...args} />
+const Template = args => <Button {...args} />;
 
-export const Red = Template.bind({})
-Red.args = {
-  backgroundColor: "yellow",
-  label: "Press Me",
-  size: "md",
-}
+export const Yellow = Template.bind({});
+Yellow.args = {
+    backgroundColor: "yellow",
+    label: "yellow Me",
+    size: "large",
+};
 
-export const Green = Template.bind({})
+export const Green = Template.bind({});
 Green.args = {
-  backgroundColor: "green",
-  label: "Press Me",
-  size: "md",
-}
+    backgroundColor: "green",
+    label: "Press Me",
+    size: "small",
+};
 
-export const Small = Template.bind({})
+export const Small = Template.bind({});
 Small.args = {
-  backgroundColor: "blue",
-  label: "Press Me",
-  size: "sm",
-}
+    backgroundColor: "blue",
+    label: "Press Me",
+    size: "small",
+};
 
-export const Large = Template.bind({})
+export const Large = Template.bind({});
 Large.args = {
-  backgroundColor: "lightblue",
-  label: "Press Me",
-  size: "lg",
-}
+    backgroundColor: "lightblue",
+    label: "Press Me",
+    size: "large",
+};
 
-export const LongLabel = Template.bind({})
+export const LongLabel = Template.bind({});
 LongLabel.args = {
-  backgroundColor: "lightpink",
-  label: "Press Me adsf asdf asdf asdfasdfasd fasd fasd fasd",
-  size: "md",
-}
+    backgroundColor: "lightpink",
+    label: "Press Me adsf asdf asdf asdfasdfasd fasd fasd fasd",
+    size: "small",
+};

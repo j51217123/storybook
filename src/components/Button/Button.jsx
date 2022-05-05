@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import ButtonBase from "../ButtonBase/ButtonBase";
 
 const Button = (props) => {
-    const { size,backgroundColor,handleClick,label } = props;
+    const { size, backgroundColor, handleClick, label } = props;
     let scale = 1;
     if (size === "small") scale = 0.75;
     if (size === "large") scale = 1.5;
@@ -10,7 +10,7 @@ const Button = (props) => {
     const style = {
         backgroundColor,
         padding: `${scale * 0.5}rem ${scale * 1}rem`,
-        border: "2px solid red",
+        // border: "2px solid red",
     };
 
     return (

@@ -2,10 +2,12 @@ import PropTypes from "prop-types";
 import { StyledButton } from "./Button.Styled";
 
 const Button = props => {
-    const { size, backgroundColor, handleClick, label } = props;
+    const { backgroundColor, size, variant, handleClick, label } = props;
+
+
 
     return (
-        <StyledButton onClick={handleClick} backgroundColor={backgroundColor} size={size}>
+        <StyledButton onClick={handleClick} backgroundColor={backgroundColor} size={size} variant={variant}>
             {label}
         </StyledButton>
     );

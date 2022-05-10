@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import StackChildren from "./StackChildren";
 import { StyledStack } from "./Stack.Styled";
 
 const Stack = props => {

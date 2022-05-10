@@ -12,7 +12,7 @@ export default {
 const Template = ({ numberOfChildren, ...args }) => (
     <Stack {...args}>
         {[...Array(numberOfChildren).keys()].map(n => (
-            <StackChildren numberOfChildren={n + 1}></StackChildren>
+            <StackChildren numberOfChildren={n + 1} key={n} />
         ))}
     </Stack>
 );

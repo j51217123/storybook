@@ -1,26 +1,15 @@
 import PropTypes from "prop-types";
-import styled, { css } from 'styled-components';
-import ButtonBase from "../ButtonBase/ButtonBase";
+import { StyledButton } from "./Button.Styled";
 
-const Button = (props) => {
+const Button = props => {
     const { size, backgroundColor, handleClick, label } = props;
-    let scale = 1;
-    if (size === "small") scale = 0.75;
-    if (size === "large") scale = 1.5;
-
-    const style = {
-        backgroundColor,
-        padding: `${scale * 0.5}rem ${scale * 1}rem`,
-        // border: "2px solid red",
-    };
 
     return (
-        <ButtonBase onClick={handleClick} style={style}>
+        <StyledButton onClick={handleClick} backgroundColor={backgroundColor} size={size}>
             {label}
-        </ButtonBase>
+        </StyledButton>
     );
 };
-
 
 Button.propTypes = {
     /**

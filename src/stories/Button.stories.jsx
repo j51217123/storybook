@@ -12,6 +12,7 @@ export default {
         },
         variant: {
             options: ["text", "contained", "outlined"],
+            control: { type: "radio" },
         },
     },
 };

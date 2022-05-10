@@ -1,14 +1,16 @@
 import PropTypes from "prop-types";
+import StackChildren from "./StackChildren";
+import { StyledStack } from "./Stack.Styled";
 
-function Stack(props) {
-    const { children, spacing = 2, direction = "row",} = props;
-    const style = {
-        display: "flex",
-        gap: `${spacing * 0.25}rem`,
-        flexDirection: direction,
-    };
-    return <div style={style}>{children}</div>;
-}
+const Stack = props => {
+    const { children, spacing, direction } = props;
+
+    return (
+        <StyledStack spacing={spacing} direction={direction}>
+            {children}
+        </StyledStack>
+    );
+};
 
 Stack.propTypes = {
     /**
@@ -22,7 +24,10 @@ Stack.propTypes = {
      * It is applied for all screen sizes.
      * @default 'row'
      */
-    direction: PropTypes.oneOfType([PropTypes.oneOf(["row", "row-reverse", "column", "column-reverse"]), PropTypes.string]),
+    direction: PropTypes.oneOfType([
+        PropTypes.oneOf(["row", "row-reverse", "column", "column-reverse"]),
+        PropTypes.string,
+    ]),
 };
 
 export default Stack;

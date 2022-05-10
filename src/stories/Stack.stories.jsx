@@ -1,4 +1,5 @@
 import Stack from "../components/Stack/Stack";
+import StackChildren from "../components/Stack/StackChildren";
 
 export default {
     title: "Components/Stack/Stack",
@@ -11,18 +12,7 @@ export default {
 const Template = ({ numberOfChildren, ...args }) => (
     <Stack {...args}>
         {[...Array(numberOfChildren).keys()].map(n => (
-            <div
-                style={{
-                    width: "50px",
-                    height: "50px",
-                    color: "rgba(0, 0, 0, 0.6)",
-                    backgroundColor: "#E7EBF0",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}>
-                {n + 1}
-            </div>
+            <StackChildren numberOfChildren={n + 1}></StackChildren>
         ))}
     </Stack>
 );

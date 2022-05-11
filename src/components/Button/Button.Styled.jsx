@@ -3,21 +3,21 @@ import ButtonBase from "../ButtonBase/ButtonBase";
 
 const textButtonStyle = css`
     background: #fff;
-    color: ${(props)=>{ 
-        console.log('props: ', props);
-        
-        return theme.color.primary
-    }};
+    color: ${({theme})=>{
+        return(
+            console.log(theme)
+        )
+    }}
     border: 1px solid #1976d2;
     &:hover {
         background: #1976d210;
     }
-`
+`;
 
 const containedButtonStyle = css`
     background: #1976d2;
     color: #fff;
-`
+`;
 
 const outlinedButtonStyle = css`
     background: #fff;
@@ -26,7 +26,7 @@ const outlinedButtonStyle = css`
     &:hover {
         background: #1976d210;
     }
-`
+`;
 
 const variantMap = {
     text: textButtonStyle,

@@ -1,3 +1,6 @@
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '../src/theme/index';
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -7,3 +10,11 @@ export const parameters = {
     },
   },
 }
+
+export const decorators = [
+  (Story) => (
+    <ThemeProvider theme={defaultTheme}>
+      <Story />
+    </ThemeProvider>
+  ),
+];

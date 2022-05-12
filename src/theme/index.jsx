@@ -4,16 +4,12 @@ import { typography } from "./typography";
 
 const { fontSizes, fonts, fontWeights, letterSpacings, lineHeights } = typography;
 export const defaultTheme = {
-    breakpoints: ["450px", "600px", "960px", "1280px", "1920px"],
-
+    breakpoints: ["576px", "768px", "992px", "1200px", "1400px"],
     fontSizes,
     fonts,
     fontWeights,
-
     letterSpacings,
     lineHeights,
-
     colors,
-
     space: spacing,
 };

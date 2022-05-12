@@ -1,11 +1,12 @@
 import Button from "../components/Button/Button";
-import Stack from '../components/Stack/Stack';
+import Stack from "../components/Stack/Stack";
 
 export default {
     title: "Components/Button/Button",
     component: Button,
     argTypes: {
-        handleClick: { action: "handleClick" },
+        onClick: { action: "onClick" },
+        backgroundColor: {control: 'color'},
         size: {
             options: ["small", "medium", "large"],
             control: { type: "radio" },
@@ -14,19 +15,42 @@ export default {
             options: ["text", "contained", "outlined"],
             control: { type: "radio" },
         },
+        isDisabled: {
+            options: ["true", "false"],
+            control: { type: "boolean" },
+        },
     },
 };
 
-const Template = args => (
-    <Stack spacing={2}>
-        <Button variant="text" {...args} />
-        <Button variant="contained"{...args} />
-        <Button variant="outlined" {...args} />
-    </Stack>
-);
+const Template = args => <Button {...args} />;
 
-export const LightBlue = Template.bind({});
-LightBlue.args = {
-    backgroundColor: "lightblue",
-    label: "Click Me",
+export const Default = Template.bind({});
+Default.args = {
+    label: "Default Button",
+    variant: "contained",
+    size: "medium",
+    isDisabled: false,
+};
+
+export const Text = Template.bind({});
+Text.args = {
+    label: "Text",
+    variant: "text",
+    size: "medium",
+};
+
+export const Outlined = Template.bind({});
+Outlined.args = {
+    label: "Outlined Button",
+    variant: "outlined",
+    size: "medium",
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    label: "Disabled Button",
+    variant: "contained",
+    size: "medium",
+    isDisabled: true,
+
 };

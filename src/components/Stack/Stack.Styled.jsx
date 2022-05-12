@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledStack = styled.div.attrs(({ spacing, direction }) => ({
-    spacing: spacing || 2,
+    spacing: spacing || 0,
     direction: direction || "row",
 }))`
     display: flex;

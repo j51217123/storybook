@@ -6,7 +6,9 @@ export default {
     component: Button,
     argTypes: {
         onClick: { action: "onClick" },
-        backgroundColor: {control: 'color'},
+        backgroundColor: { control: "color" },
+        borderColor: { control: "color" },
+        color: { control: "color" },
         size: {
             options: ["small", "medium", "large"],
             control: { type: "radio" },
@@ -22,35 +24,40 @@ export default {
     },
 };
 
-const Template = args => <Button {...args} />;
+// const Template = args => <Button {...args} />;
+const Template = args => {
+    console.log(Button.__docgenInfo.props);
+    return <Button {...args} />;
+};
 
 export const Default = Template.bind({});
 Default.args = {
-    label: "Default Button",
+    children: "Default Button",
     variant: "contained",
-    size: "medium",
     isDisabled: false,
 };
 
 export const Text = Template.bind({});
 Text.args = {
-    label: "Text",
+    children: "Text",
     variant: "text",
-    size: "medium",
 };
 
 export const Outlined = Template.bind({});
 Outlined.args = {
-    label: "Outlined Button",
+    children: "Outlined Button",
     variant: "outlined",
-    size: "medium",
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-    label: "Disabled Button",
+    children: "Disabled Button",
     variant: "contained",
-    size: "medium",
     isDisabled: true,
+};
 
+export const Icon = Template.bind({});
+Icon.args = {
+    children: "Icon Button",
+    variant: "contained",
 };

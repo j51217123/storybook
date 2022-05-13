@@ -12,18 +12,20 @@ const disabledStyle = css`
 `;
 
 const textStyle = css`
-    background-color: ${({ theme }) => `${theme.colors.white}`};
     background-color: ${({ isDisabled, theme }) => (isDisabled ? `${theme.colors.white}` : `${theme.colors.white}`)};
-    color: ${({ theme }) => `${theme.colors.blue700}`};
+    color: ${({ color, theme }) => (color ? color : `${theme.colors.blue700}`)};
+
     &:hover {
-        background-color: ${({ theme }) => `${theme.colors.blue700}0a`};
-        color: ${({ isDisabled }) => (isDisabled ? null : `rgba(0, 0, 0, 0.26)`)};
+        background-color: ${({ color, theme }) => (color ? `${color}0a` : `${theme.colors.blue700}0a`)};
+        transition: background-color 250ms;
     }
 `;
 
 const containedStyle = css`
-    background-color: ${({ theme }) => `${theme.colors.blue700}`};
-    color: ${({ theme }) => `${theme.colors.white}`};
+    background-color: ${({ backgroundColor, theme }) =>
+        backgroundColor ? backgroundColor : `${theme.colors.blue700}`};
+    color: ${({ color, theme }) => (color ? color : `${theme.colors.white}`)};
+    transition: background-color 250ms;
     &:hover {
         background-color: ${({ isDisabled, theme }) => (isDisabled ? null : `${theme.colors.blue800}`)};
     }
@@ -31,10 +33,12 @@ const containedStyle = css`
 
 const outlinedStyle = css`
     background-color: ${({ theme }) => `${theme.colors.white}`};
-    color: ${({ theme }) => `${theme.colors.blue700}`};
-    border: 1px solid ${({ theme }) => `${theme.colors.blue700}`};
+    color: ${({ color, theme }) => (color ? color : `${theme.colors.blue700}`)};
+    border: 1px solid rgba(25, 118, 210, 0.5);
+    transition: background-color 250ms, border 250ms;
     &:hover {
-        background-color: ${({ theme }) => `${theme.colors.blue700}0a`};
+        background-color: ${({ color, theme }) => (color ? `${color}0a` : `${theme.colors.blue700}0a`)};
+        border: 1px solid ${({ theme }) => `${theme.colors.blue700}`};
     }
 `;
 
@@ -44,16 +48,21 @@ const variantMap = {
     outlined: outlinedStyle,
 };
 
-export const StyledButton = styled(ButtonBase).attrs(({ backgroundColor, size, scale, variant, isDisabled }) => ({
-    scale: size === "small" ? (scale = 0.75) : size === "large" ? (scale = 1.5) : 1,
-    backgroundColor,
-    variant,
-    isDisabled,
-}))`
+export const StyledButton = styled(ButtonBase).attrs(
+    ({ backgroundColor, borderColor, color, size, scale, variant, isDisabled }) => ({
+        scale: size === "small" ? (scale = 0.75) : size === "large" ? (scale = 1.5) : 1,
+        backgroundColor,
+        borderColor,
+        color,
+        variant,
+        isDisabled,
+    })
+)`
     border-radius: 4px;
     font-size: ${({ theme }) => `${theme.fontSizes.sm}`};
     font-weight: ${({ theme }) => `${theme.fontWeights.medium}`};
     background-color: ${({ backgroundColor }) => backgroundColor};
+    color: ${({ color }) => color};
     letter-spacing: ${({ theme }) => `${theme.letterSpacings.wide}`};
     padding: ${({ scale }) => scale * 0.5}rem ${({ scale }) => scale * 1}rem;
     ${({ variant }) => variantMap[variant] || variantMap.primary};

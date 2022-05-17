@@ -8,6 +8,7 @@ module.exports = {
         "@storybook/addon-interactions",
         "@storybook/preset-create-react-app",
     ],
+    staticDirs: [{ from: '../src/Images/', to: '/' }],
     framework: "@storybook/react",
     core: {
         builder: "@storybook/builder-webpack5",

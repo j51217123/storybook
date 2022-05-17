@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
-import { StyledButton} from "./Button.Styled";
+import { StyledButton } from "./Button.Styled";
 import Icon from "../Icon/Icon";
+import etToday from "../../Icon/icon_ettoday.png";
+import Delete from "../../Icon/delete.svg";
 
 const Button = props => {
     const {
@@ -17,19 +19,22 @@ const Button = props => {
     } = props;
 
     return (
-        <StyledButton
-            onClick={isDisabled ? null : onClick}
-            backgroundColor={backgroundColor}
-            borderColor={borderColor}
-            color={color}
-            size={size}
-            variant={variant}
-            isDisabled={isDisabled}>
-            {/* {startIcon && <StartIcon>{startIcon}</StartIcon>} */}
-            <Icon name="delete_24px" size={32} color="#f78259" /> 
-            <span>{children}</span>
-            {/* {endIcon && <EndIcon>{endIcon}</EndIcon>} */}
-        </StyledButton>
+        <>
+            <StyledButton
+                onClick={isDisabled ? null : onClick}
+                backgroundColor={backgroundColor}
+                borderColor={borderColor}
+                color={color}
+                size={size}
+                variant={variant}
+                isDisabled={isDisabled}>
+                {/* {startIcon && <StartIcon>{startIcon}</StartIcon>} */}
+                {/* <Icon name="delete" size={32} color="#f78259" /> */}
+                {/* <img src={etToday} alt="" width="24" height="24" /> */}
+                <span>{children}</span>
+                {/* {endIcon && <EndIcon>{endIcon}</EndIcon>} */}
+            </StyledButton>
+        </>
     );
 };
 

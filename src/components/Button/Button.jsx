@@ -1,10 +1,6 @@
 import PropTypes from "prop-types";
 import { StyledButton } from "./Button.Styled";
-import Icon from "../Icon/Icon";
-import etToday from "../../Images/icon_ettoday.png";
-import Delete from "../../Images/delete.svg";
-import Test from '../../Images/icon-arrowbottom-svgo.svg'
-import Dark from '../../Images/dark.svg'
+import { StartIcon, EndIcon } from "../Icon/Icons.Styled";
 
 const Button = props => {
     const {
@@ -30,12 +26,9 @@ const Button = props => {
                 size={size}
                 variant={variant}
                 isDisabled={isDisabled}>
-                {/* {startIcon && <StartIcon>{startIcon}</StartIcon>} */}
-                <Icon name="dark" size={16}/>
-                {/* <img src={Test} alt="" /> */}
-                {/* <img src={etToday} alt="" width="24" height="24" /> */}
+                {startIcon && <StartIcon name={startIcon} />}
                 <span>{children}</span>
-                {/* {endIcon && <EndIcon>{endIcon}</EndIcon>} */}
+                {endIcon && <EndIcon name={endIcon} />}
             </StyledButton>
         </>
     );

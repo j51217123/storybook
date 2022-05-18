@@ -60,4 +60,7 @@ export const Icon = Template.bind({});
 Icon.args = {
     children: "Icon Button",
     variant: "contained",
+    startIcon: "delete",
+    backgroundColor: `${({ theme }) => `${theme.colors.blue700}`}`,
+    color: `${({ theme }) => `${theme.colors.white}`}`
 };

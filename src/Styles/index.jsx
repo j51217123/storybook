@@ -1,6 +1,6 @@
-import { colors } from "./color";
-import { spacing } from "./spacing";
-import { typography } from "./typography";
+import { colors } from "./utilities/color";
+import { spacing } from "./utilities/spacing";
+import { typography } from "./utilities/typography";
 
 const { fontSizes, fonts, fontWeights, letterSpacings, lineHeights } = typography;
 export const defaultTheme = {

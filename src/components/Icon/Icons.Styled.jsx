@@ -3,6 +3,12 @@ import { ReactSVG } from "react-svg";
 import SVG from "react-inlinesvg";
 import Icon from "./Icon";
 
+export const TestStyleIcon = styled.svg`
+    width: 24px;
+    height: 24px;
+    fill: black;
+`;
+
 export const StartIcon = styled(Icon)`
     margin-right: 8px;
 `;
@@ -14,7 +20,7 @@ export const EndIcon = styled(Icon)`
 export const StyledIcon = styled(ReactSVG)`
     svg {
         fill: ${({ theme }) => `${theme.colors.blue700}`};
-        
+
         ${({ size }) =>
             size &&
             css`
@@ -39,7 +45,7 @@ export const StyledIcon = styled(ReactSVG)`
 export const StyledTestIcon = styled(SVG)`
     svg {
         fill: ${({ theme }) => `${theme.colors.black}`};
-        
+
         ${({ size }) =>
             size &&
             css`
@@ -51,7 +57,7 @@ export const StyledTestIcon = styled(SVG)`
             css`
                 transform: ${transform};
             `}
-     path  {
+     path {
             ${({ color }) =>
                 color &&
                 css`

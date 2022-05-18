@@ -13,16 +13,17 @@ const Icon = ({  color,title, name, className, style,width,height,...option }) =
     const [svgHeight, setSvgHeight] = useState(defaultHeight)
     // const styles = { ...defaultStyles, ...style };
     const viewBox = "0 0 24 24";
-    // const xmlns = "http://www.w3.org/2000/svg";
-    // const xmlnsXlink = "http://www.w3.org/1999/xlink";
+    const xmlns = "http://www.w3.org/2000/svg";
+    const xmlnsXlink = "http://www.w3.org/1999/xlink";
 
     useEffect(() => {
         import(
-            `../../Icon/${name}.svg`
+            `../../assets/icon/${name}.svg`
         ).then(res => {
             setFile(res.default)
         })
     }, [name])
+
 
     useEffect(() => {
         console.log(file)
@@ -46,7 +47,6 @@ const Icon = ({  color,title, name, className, style,width,height,...option }) =
             
         // </svg>
 
-        
         <svg
         viewBox={viewBox}
         width={svgWidth}
@@ -56,7 +56,7 @@ const Icon = ({  color,title, name, className, style,width,height,...option }) =
         className={className}
         >
         {/* {title && <title>{title}</title>} */}
-        <use xlinkHref={file.url} />
+        <use  xlinkHref={`#${name}`} />
         </svg>
     );
 };
@@ -77,10 +77,10 @@ Icon.defaultProps = {
 }
 
 Icon.propTypes = {
-    size: PropTypes.number.isRequired,
-    color: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
-    viewBox: PropTypes.string.isRequired,
+    size: PropTypes.number,
+    color: PropTypes.string,
+    icon: PropTypes.string,
+    viewBox: PropTypes.string,
     style: PropTypes.shape(PropTypes.object),
     className: PropTypes.string,
 };

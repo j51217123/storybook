@@ -12,7 +12,6 @@ const Icon = ({ color, size, name, className, transform }) => {
         //     onError={error => console.log(error.message,'error.message')}
         //     onLoad={(src, hasCache) => console.log(src, hasCache,'src, hasCache')}
         //     // preProcessor={code => console.log(code.replace(/fill=".*?"/g, `fill='${color}'`))}
-        //     preProcessor={code => code.replace(/fill=".*?"/g, `fill='${color}'`)}
         //     // src="https://cdn.svgporn.com/logos/react.svg"
         //     src={`/${name}.svg`}
         //     title={name} // name

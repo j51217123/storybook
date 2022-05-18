@@ -59,8 +59,8 @@ Disabled.args = {
 export const Icon = Template.bind({});
 Icon.args = {
     children: "Icon Button",
-    variant: "contained",
+    variant: "outlined",
     startIcon: "delete",
-    backgroundColor: `${({ theme }) => `${theme.colors.blue700}`}`,
-    color: `${({ theme }) => `${theme.colors.white}`}`
+    // color: "#1976d2",
+    backgroundColor: "#fff",
 };

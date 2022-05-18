@@ -26,7 +26,7 @@ const Button = props => {
                 size={size}
                 variant={variant}
                 isDisabled={isDisabled}>
-                {startIcon && <StartIcon name={startIcon} />}
+                {startIcon && <StartIcon name={startIcon} color={color} />}
                 <span>{children}</span>
                 {endIcon && <EndIcon name={endIcon} />}
             </StyledButton>

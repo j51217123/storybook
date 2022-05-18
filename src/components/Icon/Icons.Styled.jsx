@@ -13,11 +13,8 @@ export const EndIcon = styled(Icon)`
 
 export const StyledIcon = styled(ReactSVG)`
     svg {
-        /* fill: ${({ theme }) => `${theme.colors.blue700}`}; */
-        fill: ${({ theme }) => { 
-            console.log(theme)
-            return(`${theme.colors.blue700}`)}};
-
+        fill: ${({ theme }) => `${theme.colors.blue700}`};
+        
         ${({ size }) =>
             size &&
             css`
@@ -41,7 +38,8 @@ export const StyledIcon = styled(ReactSVG)`
 
 export const StyledTestIcon = styled(SVG)`
     svg {
-        fill: ${({ theme }) => `${theme.colors.blue700}`};
+        fill: ${({ theme }) => `${theme.colors.black}`};
+        
         ${({ size }) =>
             size &&
             css`
@@ -53,7 +51,7 @@ export const StyledTestIcon = styled(SVG)`
             css`
                 transform: ${transform};
             `}
-    path {
+     path  {
             ${({ color }) =>
                 color &&
                 css`

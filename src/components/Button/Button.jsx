@@ -29,7 +29,7 @@ const Button = props => {
                 isDisabled={isDisabled}>
                 {startIcon && <StartIcon name={startIcon} iconColor={iconColor} />}
                 <span>{children}</span>
-                {/* {endIcon && <EndIcon name={endIcon} />} */}
+                {endIcon && <EndIcon name={endIcon} />}
             </StyledButton>
         </>
     );

@@ -18,10 +18,13 @@ module.exports = {
     },
 
     webpackFinal: async (config, { configType }) => {
-        config.module.rules = config.module.rules.map(data => {
-            if (/svg\|/.test(String(data.test)))
-                data.test = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/;
-            return data;
+        config.module.rules = config.module.rules.map(rule => {
+            if (rule.test && rule.test.toString().includes("svg")) {
+                const test = rule.test.toString().replace("svg|", "").replace(/\//g, "");
+                return { ...rule, test: new RegExp(test) };
+            } else {
+                return rule;
+            }
         });
 
         config.module.rules.push({
@@ -29,37 +32,15 @@ module.exports = {
             use: [
                 {
                     loader: "svg-sprite-loader",
-                    options: {},
+                    options: {
+                        // spriteFilename: () => `svg-sprite.svg?v=[contenthash]`,
+                        extract: true,
+                        publicPath: '/',
+                    },
                 },
             ],
-            include: path.resolve(__dirname, "../src/Images/"),
+            include: path.resolve(__dirname, "../src/assets/icon"),
         });
-
         return config;
     },
-
-    // webpackFinal: async (config, { configType }) => {
-    //     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
-    //     // You can change the configuration based on that.
-    //     // 'PRODUCTION' is used when building the static version of storybook.
-
-    //     // Make whatever fine-grained changes you need
-
-    //     config.module.rules.push({
-    //         test: /\.svg$/,
-    //         use: [
-    //             {
-    //                 loader: "svg-sprite-loader",
-    //                 options: {
-
-    //                 },
-    //             },
-    //         ],
-    //         include: path.resolve(__dirname, '../src/Images/'),
-    //     });
-
-    //     // Return the altered config
-
-    //     return config;
-    // },
 };

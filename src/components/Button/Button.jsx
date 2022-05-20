@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { StyledButton } from "./Button.Styled";
 import { StartIcon, EndIcon } from "../Icon/Icons.Styled";
 import IconCopy from '../Icon/IconCopy'
-import "../../assets/icon/delete.svg";
+// import "../../assets/icon/delete.svg";
 import { TestStyleIcon } from "../Icon/Icons.Styled";
 
 

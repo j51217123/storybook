@@ -1,9 +1,17 @@
 import PropTypes from "prop-types";
-import { StyledIcon, StyledTestIcon } from "./Icons.Styled";
+import { StyledIcon } from "./Icons.Styled";
 
-const Icon = ({ color, size, name, className, transform }) => {
+const Icon = ({ iconColor, color, size, name, className, transform }) => {
     return (
-        <StyledIcon src={`/${name}.svg`} className={className} color={color} size={size} transform={transform}  wrapper="span"/>
+        <StyledIcon
+            src={`/${name}.svg`}
+            className={className}
+            iconColor={iconColor}
+            color={color}
+            size={size}
+            transform={transform}
+            wrapper="span"
+        />
         // <StyledTestIcon
         //     baseURL="/home"
         //     cacheRequests={true}
@@ -18,7 +26,6 @@ const Icon = ({ color, size, name, className, transform }) => {
         //     uniqueHash="a1f8d1"
         //     uniquifyIDs={true}
         // />
-        
     );
 };
 

@@ -34,7 +34,7 @@ const containedStyle = css`
 const outlinedStyle = css`
     background-color: ${({ theme }) => `${theme.colors.white}`};
     color: ${({ color, theme }) => (color ? color : `${theme.colors.blue700}`)};
-    border: 1px solid rgba(25, 118, 210, 0.5);
+    border: 1px solid ${({ borderColor }) => (borderColor ? borderColor : `rgba(25, 118, 210, 0.5)`)};
     transition: background-color 250ms, border 250ms;
     &:hover {
         background-color: ${({ color, theme }) => (color ? `${color}0a` : `${theme.colors.blue700}0a`)};

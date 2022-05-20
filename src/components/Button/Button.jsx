@@ -1,15 +1,12 @@
 import PropTypes from "prop-types";
 import { StyledButton } from "./Button.Styled";
 import { StartIcon, EndIcon } from "../Icon/Icons.Styled";
-import IconCopy from '../Icon/IconCopy'
-// import "../../assets/icon/delete.svg";
-import { TestStyleIcon } from "../Icon/Icons.Styled";
-
 
 const Button = props => {
     const {
         backgroundColor,
         borderColor,
+        iconColor,
         color,
         size,
         variant = "contained",
@@ -30,10 +27,7 @@ const Button = props => {
                 size={size}
                 variant={variant}
                 isDisabled={isDisabled}>
-                {/* {startIcon && <StartIcon name={startIcon} color={color} />} */}
-                {/* <TestStyleIcon ><use xlinkHref="#delete" /></TestStyleIcon> */}
-
-                <IconCopy  color={`yellow`} name='delete'/>
+                {startIcon && <StartIcon name={startIcon} iconColor={iconColor} />}
                 <span>{children}</span>
                 {/* {endIcon && <EndIcon name={endIcon} />} */}
             </StyledButton>

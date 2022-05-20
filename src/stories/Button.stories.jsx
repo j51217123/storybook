@@ -8,6 +8,7 @@ export default {
         onClick: { action: "onClick" },
         backgroundColor: { control: "color" },
         borderColor: { control: "color" },
+        iconColor: { control: "color" },
         color: { control: "color" },
         size: {
             options: ["small", "medium", "large"],
@@ -58,9 +59,7 @@ Disabled.args = {
 
 export const Icon = Template.bind({});
 Icon.args = {
-    children: "Icon Button",
+    children: "DELETE",
     variant: "outlined",
-    // startIcon: "delete",
-    // color: "#1976d2",
-    backgroundColor: "#fff",
+    startIcon: "delete",
 };

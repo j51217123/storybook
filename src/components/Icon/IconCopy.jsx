@@ -18,7 +18,7 @@ const Icon = ({  color,title, name, className, style,width,height,...option }) =
 
     useEffect(() => {
         import(
-            `../../assets/icon/${name}.svg`
+            `../../Images/${name}.svg`
         ).then(res => {
             setFile(res.default)
         })

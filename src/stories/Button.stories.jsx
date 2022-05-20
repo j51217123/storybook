@@ -4,6 +4,10 @@ import Stack from "../components/Stack/Stack";
 export default {
     title: "Components/Button/Button",
     component: Button,
+    args: {
+        variant: "contained",
+        isDisabled: false,
+    },
     argTypes: {
         onClick: { action: "onClick" },
         backgroundColor: { control: "color" },
@@ -28,14 +32,16 @@ export default {
 // const Template = args => <Button {...args} />;
 const Template = args => {
     console.log(Button.__docgenInfo.props);
-    return <Button {...args} />;
+    return (
+        <>
+            <Button {...args} />
+        </>
+    );
 };
 
 export const Default = Template.bind({});
 Default.args = {
     children: "Default Button",
-    variant: "contained",
-    isDisabled: false,
 };
 
 export const Text = Template.bind({});
@@ -53,13 +59,19 @@ Outlined.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
     children: "Disabled Button",
-    variant: "contained",
     isDisabled: true,
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
+export const StartIcon = Template.bind({});
+StartIcon.args = {
     children: "DELETE",
     variant: "outlined",
     startIcon: "delete",
+};
+
+export const EndIcon = Template.bind({});
+EndIcon.args = {
+    children: "DELETE",
+    variant: "outlined",
+    endIcon: "send",
 };

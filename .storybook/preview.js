@@ -1,8 +1,8 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { NormalizeResetStyle } from "../src/Styles/base/reset";
-import { GlobalStyles } from "../src/Styles/base/global";
-import { defaultTheme } from "../src/Styles/index";
+import { NormalizeResetStyle } from "../src/Styles/base/Reset";
+import { GlobalStyles } from "../src/Styles/base/Global";
+import { defaultTheme } from "../src/Styles/Index";
 
 export const parameters = {
     actions: { argTypesRegex: "^on[A-Z].*" },
@@ -25,5 +25,5 @@ export const decorators = [
                 <Story />
             </>
         </ThemeProvider>
-    ),
+    )
 ];

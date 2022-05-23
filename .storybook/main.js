@@ -6,6 +6,7 @@ module.exports = {
         "@storybook/addon-links",
         "@storybook/addon-essentials",
         "@storybook/addon-interactions",
+        '@react-theming/storybook-addon',
         "@storybook/preset-create-react-app",
     ],
     staticDirs: [{ from: "../src/Images/", to: "/" }],

@@ -17,7 +17,11 @@ export const StyledIcon = styled(ReactSVG)`
     height: ${({ size }) => `${size}`};
 
     svg {
-        fill: ${({ iconColor, theme }) => (iconColor ? iconColor : `${theme.colors.blue700}`)};
+        /* fill: ${({ iconColor, theme }) => (iconColor ? iconColor : `${theme.colors.blue700}`)}; */
+        fill: ${({ iconColor, theme }) => {
+            console.log(theme, "theme");
+            return iconColor ? iconColor : `${theme.colors.blue700}`;
+        }};
 
         ${({ size }) =>
             size &&

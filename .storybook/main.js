@@ -6,7 +6,8 @@ module.exports = {
         "@storybook/addon-links",
         "@storybook/addon-essentials",
         "@storybook/addon-interactions",
-        '@react-theming/storybook-addon',
+        "@react-theming/storybook-addon",
+        "@react-theming/storybook-addon",
         "@storybook/preset-create-react-app",
     ],
     staticDirs: [{ from: "../src/Images/", to: "/" }],
@@ -16,6 +17,13 @@ module.exports = {
     },
     reactOptions: {
         fastRefresh: true,
+    },
+    webpackFinal: async config => {
+        config.resolve.alias["@mui/styled-engine"] = path.resolve(__dirname, "../node_modules/@mui/styled-engine-sc");  
+        // https://github.com/mui/material-ui/issues/27846
+        // https://github.com/mui/material-ui/issues/29742
+        // https://github.com/storybookjs/storybook/issues/16099
+        return config;
     },
 
     // webpackFinal: async (config, { configType }) => {

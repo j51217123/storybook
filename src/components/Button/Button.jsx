@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { StyledButton } from "./Button.Styled";
 import { StartIcon, EndIcon } from "../Icon/Icons.Styled";
+import { test } from "../../Styles/utilities/Palette";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Button = props => {
     const {
@@ -30,6 +32,8 @@ const Button = props => {
                 {startIcon && <StartIcon name={startIcon} iconColor={iconColor} />}
                 <span>{children}</span>
                 {endIcon && <EndIcon name={endIcon} />}
+                <div style={{ color: `${test.palette.error.main}` }}>Test</div>
+                <CircularProgress />
             </StyledButton>
         </>
     );

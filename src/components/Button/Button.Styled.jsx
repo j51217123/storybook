@@ -13,6 +13,7 @@ const disabledStyle = css`
 
 const textStyle = css`
     background-color: ${({ isDisabled, theme }) => (isDisabled ? `${theme.colors.white}` : `${theme.colors.white}`)};
+    /* color: ${({ color, theme }) => (color ? color : `${theme.colors.blue700}`)}; */
     color: ${({ color, theme }) => (color ? color : `${theme.colors.blue700}`)};
 
     &:hover {
@@ -63,6 +64,7 @@ export const StyledButton = styled(ButtonBase).attrs(
     font-weight: ${({ theme }) => `${theme.fontWeights.medium}`};
     background-color: ${({ backgroundColor }) => backgroundColor};
     color: ${({ color }) => color};
+    /* color: ${({ color, theme }) => (color ? color : `${theme.colors.white}`)}; */
     letter-spacing: ${({ theme }) => `${theme.letterSpacings.wide}`};
     padding: ${({ scale }) => scale * 0.5}rem ${({ scale }) => scale * 1}rem;
     ${({ variant }) => variantMap[variant] || variantMap.primary};

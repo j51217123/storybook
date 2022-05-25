@@ -1,25 +1,7 @@
-import { red } from '@mui/material/colors';
+// import { red } from '@mui/material/colors';
 
-// A custom theme for this app
-export const test = {
-  palette: {
-    primary: {
-      main: '#556cd6',
-    },
-    secondary: {
-      main: '#19857b',
-    },
-    error: {
-      main: red.A400,
-    },
-    background: {
-      default: '#fff',
-    },
-  },
-};
-
-export const theme = {
-    palette: {
+export const palette = {
+    // palette: {
         primary: {
             main: "#1976d2",
             light: "#42a5f5",
@@ -61,5 +43,5 @@ export const theme = {
             secondary: "rgba(0, 0, 0, 0.6)",
             disabled: "rgba(0, 0, 0, 0.12)",
         },
-    },
+    // },
 };

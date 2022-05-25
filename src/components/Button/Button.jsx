@@ -32,8 +32,7 @@ const Button = props => {
                 {startIcon && <StartIcon name={startIcon} iconColor={iconColor} />}
                 <span>{children}</span>
                 {endIcon && <EndIcon name={endIcon} />}
-                <div style={{ color: `${test.palette.error.main}` }}>Test</div>
-                <CircularProgress />
+                {/* <CircularProgress /> */}
             </StyledButton>
         </>
     );

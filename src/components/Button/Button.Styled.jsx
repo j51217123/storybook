@@ -53,7 +53,7 @@ const outlinedStyle = css`
 
 export const StyledCircularProgress = styled(CircularProgress)`
   /* margin-right: 8px; */
-  color: ${(props) => (props.$variant === 'contained' ? '#FFF' : props.$color)} !important;
+  color: ${(props) => (props.variant === 'contained' ? '#FFF' : props.color)} !important;
 
 `;
 

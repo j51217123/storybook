@@ -76,7 +76,7 @@ StartIcon.args = {
 
 export const EndIcon = Template.bind({});
 EndIcon.args = {
-    children: "DELETE",
+    children: "SEND",
     variant: "outlined",
     endIcon: "send",
 };

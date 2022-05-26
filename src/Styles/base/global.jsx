@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import styled, { css } from "styled-components";
+import { css } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   
@@ -7,15 +7,9 @@ export const GlobalStyles = createGlobalStyle`
     /* color: ${({ color, theme }) => (color ? color : `${theme.palette.primary.main}`)}; */
     ${({ color, theme }) =>
         css`
-            color: ${color ||`${theme.colors.blue700}`};
+            color: ${color || `${theme.colors.blue700}`};
         `}
-
+    font-size: 14px;
   }
 
 `;
-
-// ${({ color }) =>
-// color &&
-// css`
-//     fill: ${({ color, theme }) => (color ? color : `${theme.colors.blue700}`)}; ;
-// `}

@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import { StyledButton } from "./Button.Styled";
+import { StyledButton, StyledCircularProgress } from "./Button.Styled";
 import { StartIcon, EndIcon } from "../Icon/Icons.Styled";
 import { test } from "../../Styles/utilities/Palette";
-import CircularProgress from '@mui/material/CircularProgress';
+// import CircularProgress from "@mui/material/CircularProgress";
 
 const Button = props => {
     const {
@@ -14,6 +14,7 @@ const Button = props => {
         variant = "contained",
         onClick,
         isDisabled,
+        isLoading,
         children,
         startIcon,
         endIcon,
@@ -28,11 +29,11 @@ const Button = props => {
                 color={color}
                 size={size}
                 variant={variant}
-                isDisabled={isDisabled}>
+                disabled={isDisabled}>
+                {isLoading && <StyledCircularProgress size={16} color={color} />}
                 {startIcon && <StartIcon name={startIcon} iconColor={iconColor} />}
-                <span>{children}</span>
+                <span>{!isLoading && children}</span>
                 {endIcon && <EndIcon name={endIcon} />}
-                {/* <CircularProgress /> */}
             </StyledButton>
         </>
     );
@@ -59,6 +60,7 @@ Button.propTypes = {
      * @default false
      */
     isDisabled: PropTypes.bool,
+    isLoading: PropTypes.bool,
 };
 
 export default Button;

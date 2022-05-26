@@ -7,6 +7,7 @@ export default {
     args: {
         variant: "contained",
         isDisabled: false,
+        isLoading: false,
     },
     argTypes: {
         onClick: { action: "onClick" },
@@ -23,6 +24,10 @@ export default {
             control: { type: "radio" },
         },
         isDisabled: {
+            options: ["true", "false"],
+            control: { type: "boolean" },
+        },
+        isLoading: {
             options: ["true", "false"],
             control: { type: "boolean" },
         },
@@ -74,4 +79,11 @@ EndIcon.args = {
     children: "DELETE",
     variant: "outlined",
     endIcon: "send",
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+    children: "Loading...",
+    variant: "outlined",
+    isLoading: "true",
 };

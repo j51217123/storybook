@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { StyledButton, StyledCircularProgress } from "./Button.Styled";
 import { StartIcon, EndIcon } from "../Icon/Icons.Styled";
 import { test } from "../../Styles/utilities/Palette";
-// import CircularProgress from "@mui/material/CircularProgress";
 
 const Button = props => {
     const {
@@ -11,7 +10,7 @@ const Button = props => {
         iconColor,
         color,
         size,
-        variant = "contained",
+        variant,
         onClick,
         isDisabled,
         isLoading,
@@ -30,10 +29,11 @@ const Button = props => {
                 size={size}
                 variant={variant}
                 disabled={isDisabled}>
-                {isLoading && <StyledCircularProgress size={16} color={color} />}
-                {startIcon && <StartIcon name={startIcon} iconColor={iconColor} />}
-                <span>{!isLoading && children}</span>
-                {endIcon && <EndIcon name={endIcon} />}
+                <>
+                    {startIcon && <StartIcon children={children} isLoading={isLoading} name={startIcon} iconColor={iconColor} />}
+                    <span>{children}</span>
+                    {endIcon && <EndIcon isLoading={isLoading} name={endIcon} iconColor={iconColor} />}
+                </>
             </StyledButton>
         </>
     );

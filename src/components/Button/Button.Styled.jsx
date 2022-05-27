@@ -58,21 +58,15 @@ const variantMap = {
     outlined: outlinedStyle,
 };
 
-export const StyledCircularProgress = styled(CircularProgress)`
-    margin-left: ${starIcon => (starIcon ? "8px" : `0px`)};
-    margin-right: ${endIcon => (endIcon ? "8px" : `0px`)};
-    color: ${({ iconColor, theme }) => iconColor || `${theme.colors.pink700}`};
-`;
-
+/* font-size: ${({ theme }) => `${theme.fontSizes.sm}`}; */
+// font-weight: ${({ theme }) => `${theme.fontWeights.medium}`};
+// letter-spacing: ${({ theme }) => `${theme.letterSpacings.wide}`};
 export const StyledButton = styled(ButtonBase).attrs(({ size, scale }) => ({
     scale: size === "small" ? (scale = 0.75) : size === "large" ? (scale = 1.5) : 1,
 }))`
     border-radius: 4px;
-    font-size: ${({ theme }) => `${theme.fontSizes.sm}`};
-    font-weight: ${({ theme }) => `${theme.fontWeights.medium}`};
     background-color: ${({ backgroundColor }) => backgroundColor};
     color: ${({ color }) => color};
-    letter-spacing: ${({ theme }) => `${theme.letterSpacings.wide}`};
     padding: ${({ scale }) => scale * 0.5}rem ${({ scale }) => scale * 1}rem;
     ${({ variant }) => variantMap[variant] || null};
     ${({ disabled }) => (disabled ? disabledStyle : null)};

@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
-import { StyledCircularProgress } from "../Button/Button.Styled";
+import CircularProgress from '../CircularProgress/CircularProgress' 
+
 
 import { StyledIcon } from "./Icons.Styled";
 
 const Icon = props => {
     const { iconColor, color, size, name, className, transform, isLoading } = props;
     return isLoading ? (
-        <StyledCircularProgress size={16}  />
+        <CircularProgress size={16} />
     ) : (
         <StyledIcon
             src={`/${name}.svg`}

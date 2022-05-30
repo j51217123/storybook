@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import CircularProgress from "@mui/material/CircularProgress";
 
 export const StyledCircularProgress = styled(CircularProgress)`

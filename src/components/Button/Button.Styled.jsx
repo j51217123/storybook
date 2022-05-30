@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 import ButtonBase from "../ButtonBase/ButtonBase";
-import CircularProgress from "@mui/material/CircularProgress";
 
 const disabledStyle = css`
     cursor: not-allowed;
+    pointer-events: auto;
     border: ${({ variant }) => (variant === "outlined" ? "1px solid rgba(0, 0, 0, 0.26)" : "none")};
     color: rgba(0, 0, 0, 0.26);
     background-color: ${({ variant, theme }) =>

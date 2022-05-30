@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { StyledButton } from "./Button.Styled";
 import { StartIcon, EndIcon } from "../Icon/Icons.Styled";
 import CircularProgress from "../CircularProgress/CircularProgress";
-import { test } from "../../Styles/utilities/Palette";
 
 const Button = props => {
     const {
@@ -39,7 +38,7 @@ const Button = props => {
                         />
                     )}
                     {startIcon && (
-                        <StartIcon children={children} isLoading={isLoading} name={startIcon} iconColor={iconColor} />
+                        <StartIcon children={children} isDisabled={isDisabled} isLoading={isLoading} name={startIcon} iconColor={iconColor} />
                     )}
                     <span>{children}</span>
                     {endIcon && <EndIcon isLoading={isLoading} name={endIcon} iconColor={iconColor} />}

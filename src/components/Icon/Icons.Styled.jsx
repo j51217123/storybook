@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { ReactSVG } from "react-svg";
 // import SVG from "react-inlinesvg";
+
 import Icon from "./Icon";
 
 export const StartIcon = styled(Icon)`
@@ -13,14 +14,18 @@ export const EndIcon = styled(Icon)`
 
 export const StyledIcon = styled(ReactSVG)`
     line-height: 1;
-    width: ${({ size }) => `${size}`};
-    height: ${({ size }) => `${size}`};
 
     svg {
+        width: ${({ size }) => `${size}px`};
+        height: ${({ size }) => `${size}px`};
         /* fill: ${({ iconColor, theme }) => (iconColor ? iconColor : `${theme.colors.blue700}`)}; */
-        fill: ${({ iconColor, theme }) => {
+        /* fill: ${({ iconColor, theme }) => {
             console.log(theme, "theme");
             return iconColor ? iconColor : `${theme.colors.blue700}`;
+        }}; */
+        fill: ${({ isDisabled, iconColor, theme }) => {
+            console.log(theme, "theme");
+            return isDisabled ? `red` : iconColor;
         }};
 
         ${({ size }) =>
@@ -38,7 +43,8 @@ export const StyledIcon = styled(ReactSVG)`
             ${({ color }) =>
                 color &&
                 css`
-                    fill: ${({ color, theme }) => (color ? color : `${theme.colors.blue700}`)}; ;
+                    fill: ${({ color, theme }) => (color ? color : `${theme.colors.blue700}`)};
+                    /* fill: ${({ color, theme }) => (color ? color : `red`)}; */
                 `}
         }
     }

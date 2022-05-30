@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
 const MUITheme = createTheme();
-export const { palette } = MUITheme
+export const { palette } = MUITheme;
 
 // export const palette = createTheme({
 //     primary: {

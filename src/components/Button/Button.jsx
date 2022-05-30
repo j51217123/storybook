@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { StyledButton } from "./Button.Styled";
 import { StartIcon, EndIcon } from "../Icon/Icons.Styled";
-import CircularProgress from '../CircularProgress/CircularProgress' 
+import CircularProgress from "../CircularProgress/CircularProgress";
 import { test } from "../../Styles/utilities/Palette";
 
 const Button = props => {
@@ -34,7 +34,7 @@ const Button = props => {
                     {isLoading && (
                         <CircularProgress
                             size={16}
-                            sx={{color:`${color}`}} 
+                            sx={{color: `${color}`}}
                             variant="indeterminate"
                         />
                     )}

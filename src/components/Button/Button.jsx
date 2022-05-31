@@ -31,7 +31,7 @@ const Button = props => {
                 disabled={isDisabled}>
                 <>
                     {isLoading && <CircularProgress size={16} sx={{ color: `${color}` }} variant="indeterminate" />}
-                    {/* {endIcon ? (
+                    {endIcon ? (
                         <>
                             <span>{children}</span>
                             <EndIcon
@@ -53,12 +53,12 @@ const Button = props => {
                                     isDisabled={isDisabled}
                                     color={color}
                                     iconColor={iconColor}
-                                    />
-                                    <span>{children}</span>
+                                />
+                                <span>{children}</span>
                             </>
-                        ) // children 待處理
-                    )} */}
-                    {startIcon && (
+                        )
+                    )}
+                    {/* {startIcon && (
                         <StartIcon
                             name={startIcon}
                             children={children}
@@ -67,10 +67,9 @@ const Button = props => {
                             color={color}
                             iconColor={iconColor}
                         />
-                    )}
-                    {/* {!startIcon && !endIcon ? (<span>{children}</span>): null} */}
-                    <span>{children }</span>
-                    {endIcon && (
+                    )} */}
+                    {endIcon || startIcon ? null : <span>{children}</span>}
+                    {/* {endIcon && (
                         <EndIcon
                             name={endIcon}
                             children={children}
@@ -79,7 +78,7 @@ const Button = props => {
                             color={color}
                             iconColor={iconColor}
                         />
-                    )}
+                    )} */}
                 </>
             </StyledButton>
         </>

@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 import CircularProgress from "../CircularProgress/CircularProgress";
 
-import { StyledIcon,StyledTestIcon } from "./Icons.Styled";
+import { StyledIcon, StyledTestIcon } from "./Icons.Styled";
 
 const Icon = props => {
-    const { iconColor, color, size, name, className, transform, isDisabled, isLoading } = props;
+    const { iconColor, color, size, name, className, isDisabled, isLoading } = props;
     return isLoading ? (
-        <CircularProgress sx={{ color: `${color || iconColor}` }} />
+        <CircularProgress size={16} sx={{ color: `${color || iconColor}` }} />
     ) : (
         // <StyledIcon
         //     src={`/${name}.svg`}
@@ -17,13 +17,14 @@ const Icon = props => {
         //     transform={transform}
         //     wrapper="div"
         // />
-        <StyledTestIcon
+        <StyledIcon
             baseURL="/home"
+            className={className}
             cacheRequests={true}
             description={`${name} Icon`}
             loader={<span>Loading...</span>} // loading 中
-            onError={error => console.log(error.message,'error.message')}
-            onLoad={(src, hasCache) => console.log(src, hasCache,'src, hasCache')}
+            onError={error => console.log(error.message, "error.message")}
+            onLoad={(src, hasCache) => console.log(src, hasCache, "src, hasCache")}
             preProcessor={code => code.replace('fill="#FFF"', 'fill="currentcolor"')}
             fill={color}
             width={size}
@@ -37,7 +38,7 @@ const Icon = props => {
 };
 
 Icon.defaultProps = {
-    size: '16px',
+    size: "16px",
     // color: '#000101',
     className: "",
 };

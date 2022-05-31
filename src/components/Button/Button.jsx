@@ -19,6 +19,24 @@ const Button = props => {
         endIcon,
     } = props;
 
+    // const FirstIcon = () => {
+    //     if (isLoading) {
+    //         return <CircularProgress size={16} sx={{ color: `${color || iconColor}` }} variant="indeterminate" />;
+    //     } else if (startIcon) {
+    //         return (
+    //             <StartIcon
+    //                 children={children}
+    //                 isDisabled={isDisabled}
+    //                 isLoading={isLoading}
+    //                 name={startIcon}
+    //                 iconColor={iconColor}
+    //             />
+    //         );
+    //     } else {
+    //         return null;
+    //     }
+    // };
+
     return (
         <>
             <StyledButton
@@ -30,18 +48,63 @@ const Button = props => {
                 variant={variant}
                 disabled={isDisabled}>
                 <>
-                    {isLoading && (
-                        <CircularProgress
-                            size={16}
-                            sx={{color: `${color}`}}
-                            variant="indeterminate"
+                    {endIcon ? (
+                        <>
+                            <span>{children}</span>
+                            <EndIcon
+                                name={endIcon}
+                                children={children}
+                                isLoading={isLoading}
+                                isDisabled={isDisabled}
+                                color={color}
+                                iconColor={iconColor}
+                            />
+                        </>
+                    ) : (
+                         (startIcon &&
+                            <>
+                                <StartIcon
+                                    name={startIcon}
+                                    children={children}
+                                    isLoading={isLoading}
+                                    isDisabled={isDisabled}
+                                    color={color}
+                                    iconColor={iconColor}
+                                />
+                                <span>{children}</span> 
+                            </>
+                        )// children 待處理
+                    )}
+                    {/* {isLoading && <CircularProgress size={16} sx={{ color: `${color}` }} variant="indeterminate" />} */}
+                    {/* {startIcon && (
+                        <StartIcon
+                            name={startIcon}
+                            children={children}
+                            isLoading={isLoading}
+                            isDisabled={isDisabled}
+                            color={color}
+                            iconColor={iconColor}
                         />
-                    )}
-                    {startIcon && (
-                        <StartIcon children={children} isDisabled={isDisabled} isLoading={isLoading} name={startIcon} iconColor={iconColor} />
-                    )}
-                    <span>{children}</span>
-                    {endIcon && <EndIcon isLoading={isLoading} name={endIcon} iconColor={iconColor} />}
+                    )} */}
+
+                    {/* <FirstIcon
+                        children={children}
+                        isDisabled={isDisabled}
+                        isLoading={isLoading}
+                        name={startIcon}
+                        iconColor={iconColor}
+                    /> */}
+                    {/* <span>{children}</span> */}
+                    {/* {endIcon && (
+                        <EndIcon
+                            name={endIcon}
+                            children={children}
+                            isLoading={isLoading}
+                            isDisabled={isDisabled}
+                            color={color}
+                            iconColor={iconColor}
+                        />
+                    )} */}
                 </>
             </StyledButton>
         </>

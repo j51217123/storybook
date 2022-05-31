@@ -6,7 +6,7 @@ import { StyledIcon } from "./Icons.Styled";
 const Icon = props => {
     const { iconColor, color, size, name, className, transform, isDisabled, isLoading } = props;
     return isLoading ? (
-        <CircularProgress size={16} sx={{ color: `${iconColor}` }} />
+        <CircularProgress size={16} sx={{ color: `${color || iconColor}` }} />
     ) : (
         <StyledIcon
             src={`/${name}.svg`}
@@ -36,7 +36,7 @@ const Icon = props => {
 
 Icon.defaultProps = {
     size: '16px',
-    // color: 'red',
+    // color: '#000101',
     className: "",
 };
 

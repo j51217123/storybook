@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { ReactSVG } from "react-svg";
-// import SVG from "react-inlinesvg";
+import SVG from "react-inlinesvg";
 
 import Icon from "./Icon";
 
@@ -16,8 +16,8 @@ export const StyledIcon = styled(ReactSVG)`
     line-height: 1;
 
     svg {
-        width: ${({ size }) => `${size}px`};
-        height: ${({ size }) => `${size}px`};
+        width: ${({ size }) => `${size}`};
+        height: ${({ size }) => `${size}`};
         /* fill: ${({ iconColor, theme }) => (iconColor ? iconColor : `${theme.colors.blue700}`)}; */
         /* fill: ${({ iconColor, theme }) => {
             console.log(theme, "theme");
@@ -47,5 +47,14 @@ export const StyledIcon = styled(ReactSVG)`
                     /* fill: ${({ color, theme }) => (color ? color : `red`)}; */
                 `}
         }
+    }
+`;
+
+export const StyledTestIcon = styled(SVG)`
+    line-height: 1;
+    svg {
+        width: ${({ size }) => `${size}`};
+        height: ${({ size }) => `${size}`};
+
     }
 `;

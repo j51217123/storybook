@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import CircularProgress from "../CircularProgress/CircularProgress";
 
-import { StyledIcon, StyledTestIcon } from "./Icons.Styled";
+import { StyledSVG, StyledTestIcon } from "./Icons.Styled";
 
 const Icon = props => {
-    const { iconColor, color, size, name, className, isDisabled, isLoading } = props;
+    const { iconName , name, iconColor, color, size, className, isDisabled, isLoading } = props;
+
     return isLoading ? (
         <CircularProgress size={16} sx={{ color: `${color || iconColor}` }} />
     ) : (
@@ -17,7 +18,7 @@ const Icon = props => {
         //     transform={transform}
         //     wrapper="div"
         // />
-        <StyledIcon
+        <StyledSVG
             baseURL="/home"
             className={className}
             cacheRequests={true}

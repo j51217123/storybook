@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { StyledButton } from "./Button.Styled";
-import { StartIcon, EndIcon } from "../Icon/Icons.Styled";
+import { StartIcon, EndIcon, StyledIcon } from "../Icon/Icons.Styled";
 import CircularProgress from "../CircularProgress/CircularProgress";
 
 const Button = props => {
@@ -17,6 +17,8 @@ const Button = props => {
         children,
         startIcon,
         endIcon,
+        iconName,
+        iconPosition,
     } = props;
 
     return (
@@ -31,32 +33,32 @@ const Button = props => {
                 disabled={isDisabled}>
                 <>
                     {isLoading && <CircularProgress size={16} sx={{ color: `${color}` }} variant="indeterminate" />}
-                    {endIcon ? (
+                    {iconPosition === "end" ? (
                         <>
                             <span>{children}</span>
-                            <EndIcon
+                            <StyledIcon
                                 name={endIcon}
                                 children={children}
                                 isLoading={isLoading}
                                 isDisabled={isDisabled}
                                 color={color}
                                 iconColor={iconColor}
+                                iconPosition={iconPosition}
                             />
                         </>
                     ) : (
-                        startIcon && (
-                            <>
-                                <StartIcon
-                                    name={startIcon}
-                                    children={children}
-                                    isLoading={isLoading}
-                                    isDisabled={isDisabled}
-                                    color={color}
-                                    iconColor={iconColor}
-                                />
-                                <span>{children}</span>
-                            </>
-                        )
+                        <>
+                            <StyledIcon
+                                name={startIcon}
+                                children={children}
+                                isLoading={isLoading}
+                                isDisabled={isDisabled}
+                                color={color}
+                                iconColor={iconColor}
+                                iconPosition={iconPosition}
+                            />
+                            <span>{children}</span>
+                        </>
                     )}
                     {/* {startIcon && (
                         <StartIcon

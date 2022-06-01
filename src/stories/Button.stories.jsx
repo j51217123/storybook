@@ -72,6 +72,7 @@ StartIcon.args = {
     children: "DELETE",
     variant: "outlined",
     startIcon: "delete",
+    iconPosition: 'start',
 };
 
 export const EndIcon = Template.bind({});
@@ -79,6 +80,7 @@ EndIcon.args = {
     children: "SEND",
     variant: "outlined",
     endIcon: "send",
+    iconPosition: 'end',
 };
 
 export const Loading = Template.bind({});

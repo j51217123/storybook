@@ -2,21 +2,18 @@ import styled, { css } from "styled-components";
 // import { ReactSVG } from "react-svg";
 import SVG from "react-inlinesvg";
 
-import Icon from "./Icon";
-
-// export const StartIcon = styled(Icon)`
-//     margin-right: 8px;
-// `;
-
-// export const EndIcon = styled(Icon)`
-//     margin-left: 8px;
-// `;
-
-export const StyledIcon = styled(Icon)`
-    /* border: 10px solid red; */
-    /* margin-right: ${marginLeft => marginLeft} */
+export const StyledIcon = styled(SVG)`
+    line-height: 1;
     margin-left: ${({ iconPosition }) => (iconPosition === "end" ? 8 : 0)}px;
     margin-right: ${({ iconPosition }) => (iconPosition === "start" ? 8 : 0)}px;
+
+    svg {
+        width: ${({ size }) => `${size}`};
+        height: ${({ size }) => `${size}`};
+        fill: ${({ iconPosition }) => {
+            console.log(iconPosition, "iconPosition");
+        }};
+    }
 `;
 
 // export const StyledIcon = styled(ReactSVG)`
@@ -56,11 +53,3 @@ export const StyledIcon = styled(Icon)`
 //         }
 //     }
 // `;
-
-export const StyledSVG = styled(SVG)`
-    line-height: 1;
-    svg {
-        width: ${({ size }) => `${size}`};
-        height: ${({ size }) => `${size}`};
-    }
-`;

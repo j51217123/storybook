@@ -8,6 +8,7 @@ export default {
         variant: "contained",
         isDisabled: false,
         isLoading: false,
+        iconPosition: "start",
     },
     argTypes: {
         onClick: { action: "onClick" },
@@ -71,7 +72,7 @@ export const StartIcon = Template.bind({});
 StartIcon.args = {
     children: "DELETE",
     variant: "outlined",
-    startIcon: "delete",
+    iconName: "delete",
     iconPosition: 'start',
 };
 
@@ -79,7 +80,7 @@ export const EndIcon = Template.bind({});
 EndIcon.args = {
     children: "SEND",
     variant: "outlined",
-    endIcon: "send",
+    iconName: "send",
     iconPosition: 'end',
 };
 
@@ -87,5 +88,5 @@ export const Loading = Template.bind({});
 Loading.args = {
     children: "Loading...",
     variant: "outlined",
-    isLoading: "true",
+    isLoading: true,
 };

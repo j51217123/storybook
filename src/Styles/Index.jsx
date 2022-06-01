@@ -1,18 +1,25 @@
 import { colors } from "./utilities/Color";
+import { breakpoints } from "./utilities/Breakpoints";
+import { mixins } from "./utilities/Mixins";
+import { palette } from "./utilities/Palette";
+import { shadows } from "./utilities/Shadows";
+import { shape } from "./utilities/Shape";
 import { spacing } from "./utilities/Spacing";
+import { transitions } from "./utilities/Transitions";
 import { typography } from "./utilities/Typography";
-import { palette } from './utilities/Palette'
+import { zIndex } from "./utilities/ZIndex";
 
-// const { fontSizes, fonts, fontWeights, letterSpacings, lineHeights } = typography;
+// const { breakpoints, mixins, palette, shadows, shape, spacing, transitions, typography, zIndex } = MUItheme;
 
 export const defaultTheme = {
-    // breakpoints: ["576px", "768px", "992px", "1200px", "1400px"],
-    // fontSizes,
-    // fonts,
-    // fontWeights,
-    // letterSpacings,
-    // lineHeights,
     colors,
+    breakpoints,
+    mixins,
     palette,
-    // space: spacing,
+    shadows,
+    shape,
+    spacing,
+    transitions,
+    typography,
+    zIndex,
 };

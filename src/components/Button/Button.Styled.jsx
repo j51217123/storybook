@@ -43,12 +43,12 @@ const outlinedStyle = css`
     /* background-color: ${({ theme }) => `${theme.colors.white}`}; */
     color: ${({ color, theme }) => (color ? color : `${theme.colors.blue700}`)};
     border: 1px solid
-        ${({ borderColor, theme }) => (borderColor ? `${borderColor}80` : `${theme.palette.primary.main}80`)};
+        ${({ borderColor, theme }) => (borderColor ? `${borderColor}80` : `${theme.colors.blue700}80`)};
     transition: background-color 250ms, border 250ms;
 
     &:hover {
         background-color: ${({ color, theme }) => (color ? `${color}0a` : `${theme.colors.blue700}0a`)};
-        border: 1px solid ${({ borderColor, theme }) => (borderColor ? borderColor : `${theme.palette.primary.main}`)};
+        border: 1px solid ${({ borderColor, theme }) => (borderColor ? borderColor : `${theme.colors.blue700}`)};
     }
 `;
 
@@ -58,16 +58,16 @@ const variantMap = {
     outlined: outlinedStyle,
 };
 
-/* font-size: ${({ theme }) => `${theme.fontSizes.sm}`}; */
-// font-weight: ${({ theme }) => `${theme.fontWeights.medium}`};
-// letter-spacing: ${({ theme }) => `${theme.letterSpacings.wide}`};
 export const StyledButton = styled(ButtonBase).attrs(({ size, scale }) => ({
     scale: size === "small" ? (scale = 0.75) : size === "large" ? (scale = 1.5) : 1,
 }))`
-    border-radius: 4px;
-    background-color: ${({ backgroundColor }) => backgroundColor};
     color: ${({ color }) => color};
+    border-radius: 4px;
     padding: ${({ scale }) => scale * 0.5}rem ${({ scale }) => scale * 1}rem;
+    font-size: ${({ theme }) => `${theme.typography.button.fontSize}`};
+    font-weight: ${({ theme }) => `${theme.typography.button.fontWeight}`};
+    letter-spacing: ${({ theme }) => `${theme.typography.button.letterSpacing}`};
+    background-color: ${({ backgroundColor }) => backgroundColor};
     ${({ variant }) => variantMap[variant] || null};
     ${({ disabled }) => (disabled ? disabledStyle : null)};
 `;

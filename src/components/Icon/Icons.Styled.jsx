@@ -10,8 +10,8 @@ export const StyledIcon = styled(SVG)`
     svg {
         width: ${({ size }) => `${size}`};
         height: ${({ size }) => `${size}`};
-        fill: ${({ iconPosition }) => {
-            console.log(iconPosition, "iconPosition");
+        fill: ${({ theme }) => {
+            console.log("check theme:",theme);
         }};
     }
 `;

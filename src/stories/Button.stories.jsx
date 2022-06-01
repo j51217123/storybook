@@ -37,7 +37,7 @@ export default {
 
 // const Template = args => <Button {...args} />;
 const Template = args => {
-    console.log(Button.__docgenInfo.props);
+    console.log("Button.__docgenInfo.props:",Button.__docgenInfo.props);
     return (
         <>
             <Button {...args} />

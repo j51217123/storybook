@@ -6,7 +6,7 @@ const Icon = props => {
     const { iconPosition, iconName, iconColor, color, size, className, isLoading } = props;
 
     return isLoading ? (
-        <CircularProgress size={16} sx={{ color: `${color || iconColor}` }} />
+        <CircularProgress size={16} sx={{ color: `${color || iconColor}` }} iconPosition={iconPosition} />
     ) : (
         // <StyledIcon
         //     src={`/${name}.svg`}

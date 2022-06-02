@@ -2,13 +2,13 @@ import PropTypes from "prop-types";
 import { StyledCircularProgress } from "./CircularProgress.Styled";
 
 const CircularProgress = props => {
-    const { sx = [], color, className, size, variant } = props;
+    const { sx = [], color, className, size, variant, iconPosition } = props;
     return (
         <>
             <StyledCircularProgress
                 sx={[
                     {
-                        color: `${color}`,
+                        color,
                     },
                     ...(Array.isArray(sx) ? sx : [sx]),
                 ]}
@@ -16,6 +16,7 @@ const CircularProgress = props => {
                 className={className}
                 size={size}
                 variant={variant}
+                iconPosition={iconPosition}
             />
         </>
     );

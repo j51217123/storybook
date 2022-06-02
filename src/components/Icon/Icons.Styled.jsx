@@ -11,7 +11,7 @@ export const StyledIcon = styled(SVG)`
         width: ${({ size }) => `${size}`};
         height: ${({ size }) => `${size}`};
         fill: ${({ theme }) => {
-            console.log("check theme:",theme);
+            console.log("check theme:", theme);
         }};
     }
 `;

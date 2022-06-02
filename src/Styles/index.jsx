@@ -1,15 +1,7 @@
 import { colors } from "./utilities/Color";
-import { breakpoints } from "./utilities/Breakpoints";
-import { mixins } from "./utilities/Mixins";
-import { palette } from "./utilities/Palette";
-import { shadows } from "./utilities/Shadows";
-import { shape } from "./utilities/Shape";
-import { spacing } from "./utilities/Spacing";
-import { transitions } from "./utilities/Transitions";
-import { typography } from "./utilities/Typography";
-import { zIndex } from "./utilities/ZIndex";
+import { MUITheme } from "./utilities/Theme";
 
-// const { breakpoints, mixins, palette, shadows, shape, spacing, transitions, typography, zIndex } = MUItheme;
+const { breakpoints, mixins, palette, shadows, shape, spacing, transitions, typography, zIndex } = MUITheme;
 
 export const defaultTheme = {
     colors,

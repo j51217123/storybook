@@ -33,6 +33,10 @@ const disabledStyle = ({ theme, variant }) => {
             border: ${variant === "outlined" ? "1px solid rgba(0, 0, 0, 0.26)" : "none"};
             background-color: ${variant !== "contained" ? palette.background.default : "rgba(0, 0, 0, 0.12)"};
         }
+
+        svg {
+            fill: rgba(0, 0, 0, 0.12);
+        }
     `;
 };
 

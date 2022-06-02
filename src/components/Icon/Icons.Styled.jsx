@@ -2,18 +2,35 @@ import styled, { css } from "styled-components";
 // import { ReactSVG } from "react-svg";
 import SVG from "react-inlinesvg";
 
-export const StyledIcon = styled(SVG)`
-    line-height: 1;
-    margin-left: ${({ iconPosition }) => (iconPosition === "end" ? 8 : 0)}px;
-    margin-right: ${({ iconPosition }) => (iconPosition === "start" ? 8 : 0)}px;
+// export const StyledIcon = styled(SVG)`
+//     line-height: 1;
+//     margin-left: ${({ iconPosition }) => (iconPosition === "end" ? 8 : 0) + "px"};
+//     margin-right: ${({ iconPosition }) => (iconPosition === "start" ? 8 : 0) + "px"};
 
-    svg {
-        width: ${({ size }) => `${size}`};
-        height: ${({ size }) => `${size}`};
-        fill: ${({ theme }) => {
-            console.log("check theme:", theme);
-        }};
-    }
+//     svg {
+//         width: ${({ size }) => `${size}`};
+//         height: ${({ size }) => `${size}`};
+//         fill: ${({ theme }) => {
+//             console.log("check theme:", theme);
+//         }};
+//     }
+// `;
+
+export const StyledIcon = styled(SVG)`
+    ${({ theme, color }) => {
+        const { palette } = theme;
+        return css`
+            line-height: 1;
+            margin-left: ${({ iconPosition }) => (iconPosition === "end" ? 8 : 0) + "px"};
+            margin-right: ${({ iconPosition }) => (iconPosition === "start" ? 8 : 0) + "px"};
+
+            svg {
+                width: ${({ size }) => size};
+                height: ${({ size }) => size};
+                fill: ${color || palette.primary.main};
+            }
+        `;
+    }}
 `;
 
 // export const StyledIcon = styled(ReactSVG)`

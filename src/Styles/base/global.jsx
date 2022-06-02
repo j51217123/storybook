@@ -4,11 +4,12 @@ import { css } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
   
   body {
-    ${({ color, theme }) =>
-        css`
-            color: ${color || `${theme.colors.blue700}`};
-        `}
-    font-size: 14px;
-  }
+    ${({ theme, color }) => {
+        const { palette, typography } = theme;
+        return css`
+            color: ${color || palette.primary.main};
+            font-size: ${typography.fontSize + "px"};
+        `;
+    }}}
 
 `;

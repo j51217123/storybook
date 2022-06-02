@@ -25,11 +25,11 @@ export default {
             control: { type: "radio" },
         },
         isDisabled: {
-            options: ["true", "false"],
+            options: [true, false],
             control: { type: "boolean" },
         },
         isLoading: {
-            options: ["true", "false"],
+            options: [true, false],
             control: { type: "boolean" },
         },
     },
@@ -37,7 +37,7 @@ export default {
 
 // const Template = args => <Button {...args} />;
 const Template = args => {
-    console.log("Button.__docgenInfo.props:",Button.__docgenInfo.props);
+    console.log("Button.__docgenInfo.props:", Button.__docgenInfo.props);
     return (
         <>
             <Button {...args} />
@@ -73,7 +73,7 @@ StartIcon.args = {
     children: "DELETE",
     variant: "outlined",
     iconName: "delete",
-    iconPosition: 'start',
+    iconPosition: "start",
 };
 
 export const EndIcon = Template.bind({});
@@ -81,7 +81,7 @@ EndIcon.args = {
     children: "SEND",
     variant: "outlined",
     iconName: "send",
-    iconPosition: 'end',
+    iconPosition: "end",
 };
 
 export const Loading = Template.bind({});

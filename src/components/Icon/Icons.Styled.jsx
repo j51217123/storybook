@@ -17,7 +17,7 @@ import SVG from "react-inlinesvg";
 // `;
 
 export const StyledIcon = styled(SVG)`
-    ${({ theme, color }) => {
+    ${({ theme, color, iconColor }) => {
         const { palette } = theme;
         return css`
             line-height: 1;
@@ -27,7 +27,7 @@ export const StyledIcon = styled(SVG)`
             svg {
                 width: ${({ size }) => size};
                 height: ${({ size }) => size};
-                fill: ${color || palette.primary.main};
+                fill: ${color || iconColor || palette.primary.main};
             }
         `;
     }}

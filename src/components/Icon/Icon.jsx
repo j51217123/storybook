@@ -4,7 +4,7 @@ import { StyledIcon } from "./Icons.Styled";
 
 const Icon = props => {
     const { iconPosition, iconName, iconColor, color, size, className, isLoading } = props;
-
+    console.log(iconColor,'icon')
     return isLoading ? (
         <CircularProgress size={16} sx={{ color: `${color || iconColor}` }} iconPosition={iconPosition} />
     ) : (
@@ -24,7 +24,7 @@ const Icon = props => {
                 src={`/${iconName}.svg`}
                 width={size}
                 height={size}
-                fill={color}
+                fill={iconColor || color}
                 description={`${iconName} Icon`}
                 preProcessor={code => code.replace('fill="#FFF"', 'fill="currentcolor"')}
                 iconPosition={iconPosition}

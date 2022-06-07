@@ -91,6 +91,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
     variant: "contained",
+    children: "",
     className: "",
     isLoading: false,
     isDisabled: false,

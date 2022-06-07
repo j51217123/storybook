@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import { StyledButton } from "./Button.Styled";
-import Icon from '../Icon/Icon'
+import Icon from "../Icon/Icon";
 
 const Button = props => {
     const {
+        className,
         backgroundColor,
         borderColor,
         iconColor,
@@ -21,6 +22,7 @@ const Button = props => {
     return (
         <>
             <StyledButton
+                className={className}
                 onClick={isDisabled ? null : onClick}
                 backgroundColor={backgroundColor}
                 borderColor={borderColor}
@@ -71,6 +73,7 @@ Button.propTypes = {
      * Button contents.
      */
     children: PropTypes.string,
+    className: PropTypes.string,
     backgroundColor: PropTypes.string,
     /**
      * The size of the component.
@@ -84,6 +87,15 @@ Button.propTypes = {
      */
     isDisabled: PropTypes.bool,
     isLoading: PropTypes.bool,
+};
+
+Button.defaultProps = {
+    variant: "contained",
+    className: "",
+    isLoading: false,
+    isDisabled: false,
+    // iconPosition: "start",
+    onClick: () => {},
 };
 
 export default Button;

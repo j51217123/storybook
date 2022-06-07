@@ -22,7 +22,7 @@ export const StyledIcon = styled(SVG)`
         return css`
             line-height: 1;
             margin-left: ${({ iconPosition }) => (iconPosition === "end" ? 8 : 0) + "px"};
-            margin-right: ${({ iconPosition }) => (iconPosition === "start" ? 8 : 0) + "px"};
+            margin-right: ${({ iconPosition }) => iconPosition === "start" && 8 + "px"};
 
             svg {
                 width: ${({ size }) => size};

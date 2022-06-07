@@ -4,12 +4,6 @@ import Stack from "../components/Stack/Stack";
 export default {
     title: "Components/Button/Button",
     component: Button,
-    args: {
-        variant: "contained",
-        isDisabled: false,
-        isLoading: false,
-        iconPosition: "start",
-    },
     argTypes: {
         onClick: { action: "onClick" },
         backgroundColor: { control: "color" },

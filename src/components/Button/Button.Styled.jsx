@@ -78,7 +78,7 @@ const containedStyle = ({ theme, backgroundColor, color, isDisabled }) => {
     const { palette } = theme;
     return css`
         background-color: ${backgroundColor || palette.primary.main};
-        color: ${color || palette.background.default};
+        color: ${color || palette.common.white};
         transition: background-color 250ms;
 
         &:hover {

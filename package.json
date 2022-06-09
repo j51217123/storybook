@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+    "chromatic": "^6.5.6",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-inlinesvg": "^3.0.0",
@@ -24,7 +25,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "chromatic": "npx chromatic --project-token=c7e54ed35555"
   },
   "eslintConfig": {
     "extends": [

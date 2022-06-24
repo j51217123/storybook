@@ -1,5 +1,4 @@
 import Button from "../components/Button/Button";
-import Stack from "../components/Stack/Stack";
 
 export default {
     title: "Components/Button/Button",

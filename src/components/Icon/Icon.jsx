@@ -4,19 +4,10 @@ import { StyledIcon } from "./Icons.Styled";
 
 const Icon = props => {
     const { iconPosition, iconName, iconColor, color, size, className, isLoading } = props;
-
+    console.log(iconName,'iconName');
     return isLoading ? (
         <CircularProgress size={16} sx={{ color, iconColor }} iconPosition={iconPosition}/>
     ) : (
-        // <StyledIcon
-        //     src={`/${name}.svg`}
-        //     className={className}
-        //     iconColor={iconColor}
-        //     color={color}
-        //     size={size}
-        //     transform={transform}
-        //     wrapper="div"
-        // />
         iconName && (
             <StyledIcon
                 title={iconName}
@@ -40,7 +31,7 @@ Icon.defaultProps = {
     size: "16px",
     color: "inherit",
     iconColor: "inherit",
-    iconPosition: "start",
+    // iconPosition: "start",
 };
 
 Icon.propTypes = {

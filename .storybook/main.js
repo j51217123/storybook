@@ -9,7 +9,7 @@ module.exports = {
         "@react-theming/storybook-addon",
         "@storybook/preset-create-react-app",
     ],
-    staticDir: [{ from: "../src/Images/", to: "../public" }],
+    staticDirs: [{ from: "../src/Images/", to: "/" }],
     framework: "@storybook/react",
     core: {
         builder: "@storybook/builder-webpack5",

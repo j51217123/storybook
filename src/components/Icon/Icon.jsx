@@ -31,7 +31,6 @@ Icon.defaultProps = {
     size: "16px",
     color: "inherit",
     iconColor: "inherit",
-    // iconPosition: "start",
 };
 
 Icon.propTypes = {

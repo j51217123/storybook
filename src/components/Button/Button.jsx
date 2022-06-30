@@ -95,7 +95,6 @@ Button.defaultProps = {
     className: "",
     isLoading: false,
     isDisabled: false,
-    // iconPosition: "start",
     onClick: () => {},
 };
 

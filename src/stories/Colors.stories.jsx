@@ -1,8 +1,8 @@
-import Color from "../components/Color/ColorItem";
+import Colors from "../components/Color/ColorPalette";
 
 export default {
-    title: "Components/Color/ColorPalette",
-    component: Color,
+    title: "foundation/Colors",
+    component: Colors,
 };
 
 
@@ -10,9 +10,9 @@ export default {
 const Template = args => {
     return (
         <>
-            <Color />
+            <Colors />
         </>
     );
 };
 
-export const TTT = Template.bind({});
+export const ColorPalette = Template.bind({});

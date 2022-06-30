@@ -1,10 +1,16 @@
 import * as colors from "@mui/material/colors/index";
-import { StyledColorBlock, StyledColorPaletteWrapper, StyledColorPaletteContainer } from "./ColorPalette.Styled";
+import {
+    StyledColorBlockWrapper,
+    StyledH1,
+    StyledColorBlock,
+    StyledColorPaletteWrapper,
+    StyledColorPaletteContainer,
+} from "./ColorPalette.Styled";
 
 const ColorPalette = () => {
     const colorNameList = [];
 
-    // const test = Object.entries(colors).reduce((data, color) => {
+    // const StyledColorBlockWrapper = Object.entries(colors).reduce((data, color) => {
     //     const [name, value] = color;
     //     data.push({
     //         [name]: value,
@@ -18,15 +24,17 @@ const ColorPalette = () => {
                 colorNameList.push(colorName);
                 return (
                     <StyledColorPaletteContainer>
-                        <h1>{colorName}</h1>
-                        {Object.entries(value).map(([id, hex]) => {
-                            return (
-                                <StyledColorBlock bgColor={hex}>
-                                    <div>{id}</div>
-                                    <div>{hex}</div>
-                                </StyledColorBlock>
-                            );
-                        })}
+                        <StyledH1>{colorName}</StyledH1>
+                        <StyledColorBlockWrapper>
+                            {Object.entries(value).map(([id, hex]) => {
+                                return (
+                                    <StyledColorBlock bgColor={hex}>
+                                        <div>{id}</div>
+                                        <div>{hex}</div>
+                                    </StyledColorBlock>
+                                );
+                            })}
+                        </StyledColorBlockWrapper>
                     </StyledColorPaletteContainer>
                 );
             })}

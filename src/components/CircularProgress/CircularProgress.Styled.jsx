@@ -8,7 +8,7 @@ export const StyledCircularProgress = styled(CircularProgress)`
         
         return css`
             margin-left: ${({ iconPosition }) => (iconPosition === "end" ? 8 : 0) + "px"};
-            margin-right: ${({ iconPosition }) => (iconPosition === "start" ? 8 : 0) + "px"};
+            margin-right: ${({ iconPosition }) => (iconPosition === "end" ? 0 : 8) + "px"};
             color: ${iconColor || color};
         `;
     }}

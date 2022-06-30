@@ -4,7 +4,6 @@ import { StyledIcon } from "./Icons.Styled";
 
 const Icon = props => {
     const { iconPosition, iconName, iconColor, color, size, className, isLoading } = props;
-    console.log(iconName,'iconName');
     return isLoading ? (
         <CircularProgress size={16} sx={{ color, iconColor }} iconPosition={iconPosition}/>
     ) : (

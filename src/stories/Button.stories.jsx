@@ -40,30 +40,30 @@ const Template = args => {
 
 export const Default = Template.bind({});
 Default.args = {
-    children: "Default Button",
+    label: "Default Button",
 };
 
 export const Text = Template.bind({});
 Text.args = {
-    children: "Text",
+    label: "Text",
     variant: "text",
 };
 
 export const Outlined = Template.bind({});
 Outlined.args = {
-    children: "Outlined Button",
+    label: "Outlined Button",
     variant: "outlined",
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-    children: "Disabled Button",
+    label: "Disabled Button",
     isDisabled: true,
 };
 
 export const StartIcon = Template.bind({});
 StartIcon.args = {
-    children: "DELETE",
+    label: "DELETE",
     variant: "outlined",
     iconName: "delete",
     iconPosition: "start",
@@ -71,7 +71,7 @@ StartIcon.args = {
 
 export const EndIcon = Template.bind({});
 EndIcon.args = {
-    children: "SEND",
+    label: "SEND",
     variant: "outlined",
     iconName: "send",
     iconPosition: "end",
@@ -79,7 +79,7 @@ EndIcon.args = {
 
 export const Loading = Template.bind({});
 Loading.args = {
-    children: "Loading...",
+    label: "Loading...",
     variant: "outlined",
     isLoading: true,
 };

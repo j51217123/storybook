@@ -14,7 +14,7 @@ const Button = props => {
         onClick,
         isDisabled,
         isLoading,
-        children,
+        label,
         iconName,
         iconPosition,
     } = props;
@@ -33,10 +33,10 @@ const Button = props => {
                 <>
                     {iconPosition === "end" ? (
                         <>
-                            <span>{children}</span>
+                            <span>{label}</span>
                             <Icon
                                 color={color}
-                                children={children}
+                                // children={children}
                                 iconName={iconName}
                                 iconColor={iconColor}
                                 iconPosition={iconPosition}
@@ -48,14 +48,14 @@ const Button = props => {
                         <>
                             <Icon
                                 color={color}
-                                children={children}
+                                // children={children}
                                 iconName={iconName}
                                 iconColor={iconColor}
                                 iconPosition={iconPosition}
                                 isLoading={isLoading}
                                 isDisabled={isDisabled}
                             />
-                            <span>{children}</span>
+                            <span>{label}</span>
                         </>
                     )}
                 </>
@@ -72,7 +72,7 @@ Button.propTypes = {
     /**
      * Button contents.
      */
-    children: PropTypes.string,
+    label: PropTypes.string,
     className: PropTypes.string,
     backgroundColor: PropTypes.string,
     /**

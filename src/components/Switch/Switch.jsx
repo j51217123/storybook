@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { StyledSwitchWrapper, StyledSlider, StyledSwitch } from "./Switch.Styled";
+import { StyledSwitchWrapper, StyledSlider, StyledSwitch, StyledThumb } from "./Switch.Styled";
 
 const Switch = props => {
     const { color, className, size, isDisabled } = props;
@@ -14,7 +14,10 @@ const Switch = props => {
         <>
             <StyledSwitchWrapper className={className}>
                 <StyledSwitch className="StyledSwitch" onChange={onChange} color={color} disabled={isDisabled} />
-                <StyledSlider className="StyledSlider" size={size} disabled={isDisabled}></StyledSlider>
+                <StyledSlider className="StyledSlider" size={size} disabled={isDisabled}>
+                    <StyledThumb ></StyledThumb>
+                    <span>這是一段測試文字這是一段測試文字</span>
+                </StyledSlider>
             </StyledSwitchWrapper>
         </>
     );

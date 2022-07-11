@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { StyledSwitchWrapper, StyledSlider, StyledSwitch } from "./Switch.Styled";
 
 const Switch = props => {
-    const { color, size, isDisabled } = props;
+    const { color, className, size, isDisabled } = props;
     const [checked, setChecked] = useState(false);
 
     const onChange = e => {
@@ -12,10 +12,9 @@ const Switch = props => {
 
     return (
         <>
-            <StyledSwitchWrapper>
-                <StyledSwitch className="StyledSwitch" onChange={onChange} color={color} disabled={isDisabled}/>
-                <StyledSlider className="StyledSlider" size={size} disabled={isDisabled} >
-                </StyledSlider>
+            <StyledSwitchWrapper className={className}>
+                <StyledSwitch className="StyledSwitch" onChange={onChange} color={color} disabled={isDisabled} />
+                <StyledSlider className="StyledSlider" size={size} disabled={isDisabled}></StyledSlider>
             </StyledSwitchWrapper>
         </>
     );

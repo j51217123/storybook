@@ -1,8 +1,6 @@
 import styled, { css } from "styled-components";
 
-const disabledStyle = ({ theme }) => {
-    const { palette } = theme;
-    console.log("aaa");
+const disabledStyle = () => {
     return css`
         cursor: not-allowed;
         pointer-events: auto;
@@ -11,13 +9,13 @@ const disabledStyle = ({ theme }) => {
 
 export const StyledSwitchWrapper = styled.label`
     position: relative;
-
 `;
 
 export const StyledSlider = styled.span.attrs(({ size, scale }) => ({
     scale: size === "small" ? (scale = 0.75) : size === "large" ? (scale = 1.5) : 1,
 }))`
-    ${() => {
+    ${({ theme }) => {
+        const { palette } = theme;
         const px = num => {
             return `${num / 14}em`;
         };
@@ -29,6 +27,7 @@ export const StyledSlider = styled.span.attrs(({ size, scale }) => ({
             height: ${px(25)};
             border-radius: ${px(100)};
             background-color: #00000061;
+            background-color: ${`${palette.common.black}9f`};
             position: relative;
             transition: background-color 0.2s, box-shadow 0.2s;
             font-size: ${({ scale }) => scale + "rem"};
@@ -48,7 +47,6 @@ export const StyledSlider = styled.span.attrs(({ size, scale }) => ({
             }
 
             &:active:before {
-                /* width: ${px(28)}; */
                 width: ${({ disabled }) => (disabled ? `${px(21)}` : `${px(28)}`)};
             }
         `;
@@ -77,11 +75,13 @@ export const StyledSwitch = styled.input.attrs(() => ({
 
             &:checked + span {
                 background-color: ${`${color}9f` || `${palette.primary.main}9f`};
+                background-color: ${`${palette.primary.main}9f` || `${color}9f`};
 
                 &:before {
                     left: calc(100% - 2px);
                     transform: translateX(-100%);
                     background-color: ${`${color}` || `${palette.primary.main}`};
+                    background-color: ${`${palette.primary.main}` || `${color}`};
                 }
             }
         `;

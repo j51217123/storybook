@@ -12,26 +12,27 @@ const disabledStyle = () => {
     `;
 };
 
-export const StyledSwitchContainer = styled.label`
-    position: relative;
-`;
-
-export const StyledSlider = styled.div.attrs(({ size, scale }) => ({
+export const StyledLabel = styled.label.attrs(({ size, scale }) => ({
     scale: size === "small" ? (scale = 0.75) : size === "large" ? (scale = 1.5) : 1,
 }))`
-    ${() => {
+    ${({ disabled }) => {
         return css`
             display: flex;
             align-items: center;
+            justify-content: space-between;
             cursor: pointer;
             width: ${px(50)};
             height: ${px(25)};
-            border-radius: ${px(100)};
             background-color: rgba(0, 0, 0, 0.39);
+            border-radius: ${px(100)};
+            font-size: ${({ scale }) => scale + "rem"};
             position: relative;
             transition: background-color 0.2s, box-shadow 0.2s;
-            font-size: ${({ scale }) => scale + "rem"};
-            ${({ disabled }) => (disabled ? disabledStyle : null)};
+            ${({ disabled }) => (disabled ? disabledStyle : null)}
+
+            &:active ${StyledThumb} {
+                width: ${disabled ? `${px(21)}` : `${px(28)}`};
+            }
         `;
     }}
 `;
@@ -47,55 +48,37 @@ export const StyledThumb = styled.span`
             height: ${px(21)};
             border-radius: ${px(45)};
             transition: 0.2s;
-            background: #fff;
+            background-color: #fff;
             box-shadow: 0 ${px(2)} ${px(4)} 0 rgba(0, 35, 11, 0.2);
-            z-index: 2;
-
-            &:active {
-                width: ${({ disabled }) => (disabled ? `${px(21)}` : `${px(28)}`)};
-            }
         `;
     }}
 `;
 
-export const StyledLabel = styled.span`
-    ${() => {
-        return css`
-            position: absolute;
-            width: max-content;
-        `;
-    }}
-`;
-
-export const StyledSwitch = styled.input.attrs(() => ({
+export const StyledInput = styled.input.attrs(() => ({
     type: "checkbox",
 }))`
-    ${({ theme, color }) => {
+    ${({ theme, checked, color }) => {
         const { palette } = theme;
-        console.log(color, "color");
         return css`
-            cursor: inherit;
-            position: absolute;
-            left: -9999px;
-            top: -9999px;
+            height: 0;
+            width: 0;
+            visibility: hidden;
 
-            &:focus + ${StyledSlider} {
+            &:focus + ${StyledLabel} {
                 box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
             }
 
-            &:focus:checked + ${StyledSlider} {
+            &:focus:checked + ${StyledLabel} {
                 box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
             }
 
-            &:checked + ${StyledSlider} {
-                background-color: ${`${color}9f` || `${palette.primary.main}9f`};
-                /* background-color: ${`${palette.primary.main}9f` || `${color}9f`}; */
+            &:checked + ${StyledLabel} {
+                /* background-color: ${checked ? `${color}9f` : `${palette.primary.main}9f`}; */
 
                 ${StyledThumb} {
                     left: calc(100% - 2px);
                     transform: translateX(-100%);
-                    background-color: ${`${color}` || `${palette.primary.main}`};
-                    /* background-color: ${`${palette.primary.main}` || `${color}`}; */
+                    /* background-color: ${checked ? `${color}` : `${palette.primary.main}`}; */
                 }
             }
         `;

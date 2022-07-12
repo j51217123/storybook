@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { StyledSwitchWrapper, StyledSlider, StyledSwitch, StyledThumb } from "./Switch.Styled";
+import { StyledSwitchContainer, StyledSlider, StyledSwitch, StyledThumb, StyledLabel } from "./Switch.Styled";
 
 const Switch = props => {
     const { color, className, size, isDisabled } = props;
@@ -12,13 +12,13 @@ const Switch = props => {
 
     return (
         <>
-            <StyledSwitchWrapper className={className}>
-                <StyledSwitch className="StyledSwitch" onChange={onChange} color={color} disabled={isDisabled} />
-                <StyledSlider className="StyledSlider" size={size} disabled={isDisabled}>
-                    <StyledThumb ></StyledThumb>
-                    <span>這是一段測試文字這是一段測試文字</span>
+            <StyledSwitchContainer className={className}>
+                <StyledSwitch className="StyledSwitch" onChange={onChange}  disabled={isDisabled} />
+                <StyledSlider className="StyledSlider" size={size} disabled={isDisabled} color={color}>
+                    <StyledThumb></StyledThumb>
+                    <StyledLabel>這是一段測試文字這是一段測試文字</StyledLabel>
                 </StyledSlider>
-            </StyledSwitchWrapper>
+            </StyledSwitchContainer>
         </>
     );
 };
@@ -32,6 +32,10 @@ Switch.propTypes = {
      */
     size: PropTypes.oneOf(["small", "medium", "large"], PropTypes.string),
     isDisabled: PropTypes.bool,
+};
+
+Switch.defaultProps = {
+
 };
 
 export default Switch;

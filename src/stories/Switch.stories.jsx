@@ -1,4 +1,4 @@
-import Switch from "../components/Switch/Switch";
+import Switch from "../components/Switch/Switch2";
 
 export default {
     title: "Components/Switch/Switch",
@@ -21,6 +21,7 @@ export default {
 
 // const Template = args => <Button {...args} />;
 const Template = args => {
+    console.log("Switch.__docgenInfo.props:", Switch.__docgenInfo.props);
     return (
         <>
             <Switch {...args} />

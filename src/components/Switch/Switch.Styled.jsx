@@ -12,11 +12,11 @@ const disabledStyle = () => {
     `;
 };
 
-export const StyledSwitchWrapper = styled.label`
+export const StyledSwitchContainer = styled.label`
     position: relative;
 `;
 
-export const StyledSlider = styled.span.attrs(({ size, scale }) => ({
+export const StyledSlider = styled.div.attrs(({ size, scale }) => ({
     scale: size === "small" ? (scale = 0.75) : size === "large" ? (scale = 1.5) : 1,
 }))`
     ${() => {
@@ -32,28 +32,11 @@ export const StyledSlider = styled.span.attrs(({ size, scale }) => ({
             transition: background-color 0.2s, box-shadow 0.2s;
             font-size: ${({ scale }) => scale + "rem"};
             ${({ disabled }) => (disabled ? disabledStyle : null)};
-
-            /* &:before {
-                content: "";
-                position: absolute;
-                top: ${px(2)};
-                left: ${px(2)};
-                width: ${px(21)};
-                height: ${px(21)};
-                border-radius: ${px(45)};
-                transition: 0.2s;
-                background: #fff;
-                box-shadow: 0 ${px(2)} ${px(4)} 0 rgba(0, 35, 11, 0.2);
-            }
-
-            &:active:before {
-                width: ${({ disabled }) => (disabled ? `${px(21)}` : `${px(28)}`)};
-            } */
         `;
     }}
 `;
 
-export const StyledThumb = styled.div`
+export const StyledThumb = styled.span`
     ${() => {
         return css`
             content: "";
@@ -66,10 +49,20 @@ export const StyledThumb = styled.div`
             transition: 0.2s;
             background: #fff;
             box-shadow: 0 ${px(2)} ${px(4)} 0 rgba(0, 35, 11, 0.2);
+            z-index: 2;
 
             &:active {
                 width: ${({ disabled }) => (disabled ? `${px(21)}` : `${px(28)}`)};
             }
+        `;
+    }}
+`;
+
+export const StyledLabel = styled.span`
+    ${() => {
+        return css`
+            position: absolute;
+            width: max-content;
         `;
     }}
 `;
@@ -79,22 +72,22 @@ export const StyledSwitch = styled.input.attrs(() => ({
 }))`
     ${({ theme, color }) => {
         const { palette } = theme;
-
+        console.log(color, "color");
         return css`
             cursor: inherit;
             position: absolute;
             left: -9999px;
             top: -9999px;
 
-            &:focus + span {
+            &:focus + ${StyledSlider} {
                 box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
             }
 
-            &:focus:checked + span {
+            &:focus:checked + ${StyledSlider} {
                 box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
             }
 
-            &:checked + span {
+            &:checked + ${StyledSlider} {
                 background-color: ${`${color}9f` || `${palette.primary.main}9f`};
                 /* background-color: ${`${palette.primary.main}9f` || `${color}9f`}; */
 

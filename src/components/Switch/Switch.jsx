@@ -1,24 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-import { StyledSwitchContainer, StyledSlider, StyledSwitch, StyledThumb, StyledLabel } from "./Switch.Styled";
+import { StyledInput, StyledLabel, StyledThumb } from "./Switch.Styled";
 
 const Switch = props => {
-    const { color, className, size, isDisabled } = props;
+    const { id, color, isDisabled, size, checkedChildren, unCheckedChildren } = props;
     const [checked, setChecked] = useState(false);
 
-    const onChange = e => {
-        setChecked(e.target.checked);
+    const onChange = () => {
+        setChecked(!checked);
     };
 
     return (
         <>
-            <StyledSwitchContainer className={className}>
-                <StyledSwitch className="StyledSwitch" onChange={onChange}  disabled={isDisabled} />
-                <StyledSlider className="StyledSlider" size={size} disabled={isDisabled} color={color}>
-                    <StyledThumb></StyledThumb>
-                    <StyledLabel>這是一段測試文字這是一段測試文字</StyledLabel>
-                </StyledSlider>
-            </StyledSwitchContainer>
+            <StyledInput
+                className="StyledInput"
+                id={id}
+                onChange={onChange}
+                checked={checked}
+                color={color}
+                disabled={isDisabled}
+            />
+            <StyledLabel className="StyledLabel" htmlFor={id} size={size} disabled={isDisabled}>
+                <StyledThumb className="StyledThumb" />
+                {checked ? checkedChildren : unCheckedChildren}
+            </StyledLabel>
         </>
     );
 };
@@ -35,7 +40,8 @@ Switch.propTypes = {
 };
 
 Switch.defaultProps = {
-
+    id: "switchControl",
+    color: "#1976d2",
 };
 
 export default Switch;
